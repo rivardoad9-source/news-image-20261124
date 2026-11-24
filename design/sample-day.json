@@ -1,0 +1,337 @@
+{
+ "day": "Tuesday 24 November 2026",
+ "tagline": "SAMPLE LAYOUT, NOT NEWS · invented stories to test the page · replace with real stories",
+ "timeline": [
+  [
+   "00:30",
+   "SAMPLE overnight"
+  ],
+  [
+   "~06:00",
+   "SAMPLE talks"
+  ],
+  [
+   "~09:15",
+   "SAMPLE market open"
+  ],
+  [
+   "~12:00",
+   "SAMPLE hearing"
+  ],
+  [
+   "~16:40",
+   "SAMPLE launch delay"
+  ],
+  [
+   "21:00",
+   "SAMPLE vote"
+  ]
+ ],
+ "numbers": [
+  [
+   "12k",
+   "SAMPLE people displaced (invented)"
+  ],
+  [
+   "M6.4",
+   "SAMPLE quake size (invented)"
+  ],
+  [
+   "2-1",
+   "SAMPLE match score (invented)"
+  ],
+  [
+   "-2%",
+   "SAMPLE index move (invented)"
+  ]
+ ],
+ "leads": [
+  {
+   "place": "LAGOS, NIGERIA",
+   "region": "AFRICA",
+   "field": "Disaster",
+   "headline": "SAMPLE: River floods leave thousands homeless",
+   "dek": "Placeholder for an African lead with no business angle.",
+   "source": "SAMPLE placeholder",
+   "badge": "CONFIRMED",
+   "scene": "flood",
+   "lat": 6.5,
+   "lon": 3.4,
+   "text": "12k"
+  },
+  {
+   "place": "MANILA, PHILIPPINES",
+   "region": "ASIA",
+   "field": "Disaster",
+   "headline": "SAMPLE: Strong quake hits a coastal province",
+   "dek": "Placeholder dek for the layout check; all names and numbers are invented.",
+   "source": "SAMPLE placeholder",
+   "badge": "CONFIRMED",
+   "scene": "quake",
+   "lat": 14.6,
+   "lon": 121.0,
+   "text": "M6.4"
+  },
+  {
+   "place": "GENEVA, SWITZERLAND",
+   "region": "EUROPE",
+   "field": "Diplomacy",
+   "headline": "SAMPLE: Envoys meet for a second day of talks",
+   "dek": "Placeholder lead using a diplomacy scene and no figure in the picture.",
+   "source": "SAMPLE placeholder",
+   "badge": "OFFICIAL",
+   "scene": "diplomacy",
+   "lat": 46.2,
+   "lon": 6.15
+  }
+ ],
+ "stories": [
+  {
+   "place": "DOHA",
+   "region": "MIDDLE EAST",
+   "field": "Sport",
+   "headline": "SAMPLE: Hosts win a cup semi-final",
+   "dek": "Placeholder score line and a short sentence about it.",
+   "source": "SAMPLE placeholder",
+   "badge": "REPORTED",
+   "scene": "sport",
+   "lat": 25.3,
+   "lon": 51.5,
+   "text": "2-1"
+  },
+  {
+   "place": "TOKYO",
+   "region": "ASIA",
+   "field": "Markets",
+   "headline": "SAMPLE: Stocks slide in early trading",
+   "dek": "Placeholder market story, with a made-up index move.",
+   "source": "SAMPLE placeholder",
+   "badge": "REPORTED",
+   "scene": "market",
+   "lat": 35.7,
+   "lon": 139.7,
+   "text": "-2%"
+  },
+  {
+   "place": "SYDNEY",
+   "region": "OCEANIA",
+   "field": "Weather",
+   "headline": "SAMPLE: Bushfire warning for the west",
+   "dek": "Placeholder warning text about a fire danger rating.",
+   "source": "SAMPLE placeholder",
+   "badge": "OFFICIAL",
+   "scene": "wildfire",
+   "lat": -33.9,
+   "lon": 151.2
+  },
+  {
+   "place": "NAIROBI",
+   "region": "AFRICA",
+   "field": "Court",
+   "headline": "SAMPLE: Court hears an appeal",
+   "dek": "Placeholder legal story with a hearing date.",
+   "source": "SAMPLE placeholder",
+   "badge": "REPORTED",
+   "scene": "court",
+   "lat": -1.3,
+   "lon": 36.8
+  },
+  {
+   "place": "SAO PAULO",
+   "region": "AMERICAS",
+   "field": "Health",
+   "headline": "SAMPLE: Clinics report a flu surge",
+   "dek": "Placeholder health story about hospital beds.",
+   "source": "SAMPLE placeholder",
+   "badge": "CLAIM",
+   "scene": "health",
+   "lat": -23.5,
+   "lon": -46.6
+  },
+  {
+   "place": "KOUROU",
+   "region": "WORLD",
+   "field": "Space",
+   "headline": "SAMPLE: Satellite launch slips a day",
+   "dek": "Placeholder space story with a new launch time.",
+   "source": "SAMPLE placeholder",
+   "badge": "ONGOING",
+   "scene": "satellite",
+   "lat": 5.2,
+   "lon": -52.7
+  },
+  {
+   "place": "SANTIAGO",
+   "region": "AMERICAS",
+   "field": "Protest",
+   "headline": "SAMPLE: Students march over fees",
+   "dek": "Placeholder protest story with a crowd count.",
+   "source": "SAMPLE placeholder",
+   "badge": "REPORTED",
+   "scene": "protest",
+   "lat": -33.4,
+   "lon": -70.6
+  },
+  {
+   "place": "MUMBAI",
+   "region": "ASIA",
+   "field": "Transport",
+   "headline": "SAMPLE: Rail line reopens",
+   "dek": "Placeholder transport story on service times.",
+   "source": "SAMPLE placeholder",
+   "badge": "REPORTED",
+   "scene": "train",
+   "lat": 19.1,
+   "lon": 72.9
+  },
+  {
+   "place": "LISBON",
+   "region": "EUROPE",
+   "field": "Weather",
+   "headline": "SAMPLE: Storm closes ports and schools",
+   "dek": "Placeholder storm story with wind speeds.",
+   "source": "SAMPLE placeholder",
+   "badge": "CONFIRMED",
+   "scene": "storm",
+   "lat": 38.7,
+   "lon": -9.1
+  },
+  {
+   "place": "CAIRO",
+   "region": "MIDDLE EAST",
+   "field": "Politics",
+   "headline": "SAMPLE: Run-off votes counted",
+   "dek": "Placeholder election story with turnout figure.",
+   "source": "SAMPLE placeholder",
+   "badge": "PROVISIONAL",
+   "scene": "election",
+   "lat": 30.0,
+   "lon": 31.2
+  }
+ ],
+ "also": [
+  [
+   "Accra",
+   "AFRICA",
+   "SAMPLE: Cocoa board sets new price",
+   "SAMPLE"
+  ],
+  [
+   "Seoul",
+   "ASIA",
+   "SAMPLE: Pop star announces tour",
+   "SAMPLE"
+  ],
+  [
+   "Oslo",
+   "EUROPE",
+   "SAMPLE: Ferry suspended",
+   "SAMPLE",
+   "CLAIM"
+  ],
+  [
+   "Lima",
+   "AMERICAS",
+   "SAMPLE: Museum reopens gold hall",
+   "SAMPLE"
+  ],
+  [
+   "Riyadh",
+   "MIDDLE EAST",
+   "SAMPLE: Airport terminal",
+   "SAMPLE",
+   "OFFICIAL"
+  ],
+  [
+   "Perth",
+   "OCEANIA",
+   "SAMPLE: Port strike enters day two",
+   "SAMPLE"
+  ],
+  [
+   "Dakar",
+   "AFRICA",
+   "SAMPLE: Fishers protest new quotas",
+   "SAMPLE"
+  ],
+  [
+   "Hanoi",
+   "ASIA",
+   "SAMPLE: Metro line opens to riders",
+   "SAMPLE"
+  ],
+  [
+   "Rome",
+   "EUROPE",
+   "SAMPLE: Strike halts some trains",
+   "SAMPLE"
+  ],
+  [
+   "Bogota",
+   "AMERICAS",
+   "SAMPLE: Mayor unveils bike lanes",
+   "SAMPLE"
+  ],
+  [
+   "Amman",
+   "MIDDLE EAST",
+   "SAMPLE: Aid convoy",
+   "SAMPLE",
+   "CONFIRMED"
+  ],
+  [
+   "Auckland",
+   "OCEANIA",
+   "SAMPLE: Rugby squad named",
+   "SAMPLE"
+  ],
+  [
+   "Kigali",
+   "AFRICA",
+   "SAMPLE: Tech hub opens its doors",
+   "SAMPLE"
+  ],
+  [
+   "Dhaka",
+   "ASIA",
+   "SAMPLE: Garment talks resume",
+   "SAMPLE"
+  ],
+  [
+   "Vienna",
+   "EUROPE",
+   "SAMPLE: Opera season sells out",
+   "SAMPLE"
+  ],
+  [
+   "Toronto",
+   "AMERICAS",
+   "SAMPLE: Hockey trade shakes league",
+   "SAMPLE"
+  ],
+  [
+   "Beirut",
+   "MIDDLE EAST",
+   "SAMPLE: Port clean-up continues",
+   "SAMPLE"
+  ],
+  [
+   "Geneva",
+   "WORLD",
+   "SAMPLE: UN agency issues warning",
+   "SAMPLE"
+  ]
+ ],
+ "left_out": [
+  [
+   "SAMPLE earlier story A",
+   "Sun 22"
+  ],
+  [
+   "SAMPLE earlier story B",
+   "Sat 21"
+  ]
+ ],
+ "not_yet": "SAMPLE items scheduled for later days.",
+ "foot": "HOW SURE: CONFIRMED = 2+ outlets · OFFICIAL = on the record · REPORTED = one outlet · CLAIM = one side's account. SAMPLE PAGE: every story is invented to test the layout. Scenes are drawn illustrations, not photographs."
+}
