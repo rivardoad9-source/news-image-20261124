@@ -1,0 +1,364 @@
+{
+ "day": "Tuesday 24 November 2026",
+ "tagline": "Drone hits Riyadh tower · China probes Shanghai chief · Leak: 490,000+ Russians dead",
+ "timeline": [
+  [
+   "~06:30",
+   "KOSPI closes +6.3%"
+  ],
+  [
+   "~14:05",
+   "ECHR pushback ruling"
+  ],
+  [
+   "~14:25",
+   "Rosstat leak report"
+  ],
+  [
+   "~14:50",
+   "CAS backs Senegal"
+  ],
+  [
+   "21:00",
+   "Nvidia closes -5.9%"
+  ]
+ ],
+ "numbers": [
+  [
+   "11",
+   "hurt as a drone hits a Riyadh financial-district tower"
+  ],
+  [
+   "490k",
+   "Russian soldiers dead, per leaked Rosstat death records"
+  ],
+  [
+   "-5.9%",
+   "Nvidia close, a day after its +31.5% rally"
+  ],
+  [
+   "+6.3%",
+   "KOSPI, Seoul's best day on the Nvidia rebound"
+  ]
+ ],
+ "leads": [
+  {
+   "place": "RIYADH, SAUDI ARABIA",
+   "region": "MIDDLE EAST",
+   "field": "Conflict",
+   "headline": "Drone strike on Riyadh tower injures 11",
+   "dek": "Coalition blames the Houthis, who have not claimed it; most flights to Riyadh cancelled.",
+   "source": "Al Jazeera · Saudi civil defence",
+   "badge": "OFFICIAL",
+   "scene": "drone",
+   "lat": 24.7,
+   "lon": 46.7,
+   "text": "11"
+  },
+  {
+   "place": "SHANGHAI, CHINA",
+   "region": "ASIA",
+   "field": "Politics",
+   "headline": "China probes Shanghai chief Chen Jining",
+   "dek": "Politburo member, 62, accused of serious violations; fourth Politburo figure hit since 2022.",
+   "source": "CNN · Washington Post · ABC",
+   "badge": "CONFIRMED",
+   "scene": "probe",
+   "lat": 31.2,
+   "lon": 121.5
+  },
+  {
+   "place": "MOSCOW, RUSSIA",
+   "region": "EUROPE",
+   "field": "War",
+   "headline": "Leak: at least 490,000 Russian troops dead",
+   "dek": "Hacked Rosstat death records, Feb 2022 to Aug 2026; the missing are not counted.",
+   "source": "Euronews · Democracy Now",
+   "badge": "CONFIRMED",
+   "scene": "leak",
+   "lat": 55.8,
+   "lon": 37.6,
+   "text": "490k"
+  }
+ ],
+ "stories": [
+  {
+   "place": "LAUSANNE / DAKAR",
+   "region": "AFRICA",
+   "field": "Sport",
+   "headline": "Court hands Senegal back AFCON title",
+   "dek": "CAS overturns CAF's forfeit; the 1-0 final stands. Morocco vows appeal.",
+   "source": "Al Jazeera · OkayAfrica",
+   "badge": "CONFIRMED",
+   "scene": "trophy",
+   "lat": 14.7,
+   "lon": -17.4,
+   "text": "1-0"
+  },
+  {
+   "place": "ULLEUNG, SOUTH KOREA",
+   "region": "ASIA",
+   "field": "Defence",
+   "headline": "Russian jets near island set off alert",
+   "dek": "About 5 warplanes enter Korea's air zone; third time in 8 days.",
+   "source": "Korea Herald · Korea Times",
+   "badge": "CONFIRMED",
+   "scene": "jets",
+   "lat": 37.5,
+   "lon": 130.9
+  },
+  {
+   "place": "GAZA CITY",
+   "region": "MIDDLE EAST",
+   "field": "Conflict",
+   "headline": "Strike kills Hamas security chief",
+   "dek": "Naim Abu Nahl killed by drone in a crowded street; others hurt.",
+   "source": "Al Jazeera · Reuters",
+   "badge": "CONFIRMED",
+   "scene": "strike",
+   "lat": 31.5,
+   "lon": 34.5
+  },
+  {
+   "place": "STRASBOURG, FRANCE",
+   "region": "EUROPE",
+   "field": "Justice",
+   "headline": "Rights court faults Poland, Latvia",
+   "dek": "ECHR rules pushbacks at the Belarus border broke the ban on ill-treatment.",
+   "source": "Euronews · ECHR",
+   "badge": "OFFICIAL",
+   "scene": "court",
+   "lat": 48.6,
+   "lon": 7.8
+  },
+  {
+   "place": "WASHINGTON STATE, US",
+   "region": "AMERICAS",
+   "field": "Health",
+   "headline": "First bird-flu death tied to dairy cows",
+   "dek": "WHO reports 3 H5N1 cases among farm workers, one fatal; risk to public low.",
+   "source": "WHO",
+   "badge": "OFFICIAL",
+   "scene": "birdflu",
+   "lat": 46.6,
+   "lon": -120.5,
+   "text": "H5N1"
+  },
+  {
+   "place": "JIUQUAN, CHINA",
+   "region": "ASIA",
+   "field": "Space",
+   "headline": "Pakistani named for Shenzhou-24 crew",
+   "dek": "Zeeshan Ali set to be first foreign astronaut on a Chinese mission.",
+   "source": "Al Jazeera · Dawn · SCMP",
+   "badge": "CONFIRMED",
+   "scene": "space",
+   "lat": 40.9,
+   "lon": 100.3
+  },
+  {
+   "place": "NEW YORK",
+   "region": "AMERICAS",
+   "field": "Markets",
+   "headline": "Nvidia slips; Anthropic below IPO price",
+   "dek": "Nasdaq -1.5%, Dow +0.9% as the AI rally fades a day later.",
+   "source": "AP · BNN Bloomberg",
+   "badge": "CONFIRMED",
+   "scene": "market",
+   "lat": 40.7,
+   "lon": -74.0,
+   "text": "-5.9%"
+  },
+  {
+   "place": "HONIARA / CANBERRA",
+   "region": "OCEANIA",
+   "field": "Diplomacy",
+   "headline": "Solomons may drop China police pact",
+   "dek": "ABC says no renewal in 2027; RNZ says it is under review.",
+   "source": "ABC · RNZ",
+   "badge": "REPORTED",
+   "scene": "diplomacy",
+   "lat": -9.4,
+   "lon": 160.0
+  },
+  {
+   "place": "ESKISEHIR, TURKEY",
+   "region": "MIDDLE EAST",
+   "field": "Disaster",
+   "headline": "Military helicopter crash kills 5",
+   "dek": "Air force AS-532 goes down on a training flight; cause not given.",
+   "source": "Al Jazeera · Turkish MoD",
+   "badge": "OFFICIAL",
+   "scene": "helicopter",
+   "lat": 39.8,
+   "lon": 30.5,
+   "text": "5"
+  },
+  {
+   "place": "KINSHASA, DR CONGO",
+   "region": "AFRICA",
+   "field": "Economy",
+   "headline": "Congo to make miners sell local stakes",
+   "dek": "Decree due by January: 10% of shares for Congolese citizens.",
+   "source": "Semafor via OkayAfrica",
+   "badge": "REPORTED",
+   "scene": "mine",
+   "lat": -4.3,
+   "lon": 15.3
+  }
+ ],
+ "also": [
+  [
+   "Hanoi",
+   "ASIA",
+   "Eatery gas blast kills 6",
+   "Xinhua"
+  ],
+  [
+   "Versailles",
+   "EUROPE",
+   "Nahel officer sent to murder trial",
+   "Euronews"
+  ],
+  [
+   "Paris",
+   "EUROPE",
+   "Sanofi to buy Insmed for $41bn",
+   "Euronews"
+  ],
+  [
+   "Zakarpattia",
+   "EUROPE",
+   "Hungary's Magyar meets Zelensky",
+   "Euronews"
+  ],
+  [
+   "Zaporizhzhia",
+   "EUROPE",
+   "Russian strikes kill 2, hurt 40+",
+   "Democracy Now"
+  ],
+  [
+   "Brussels",
+   "EUROPE",
+   "EUR45bn Ukraine aid in budget fight",
+   "Euronews"
+  ],
+  [
+   "Baghdad",
+   "MIDDLE EAST",
+   "Iraq moves on Kurdish oilfields",
+   "Al Jazeera"
+  ],
+  [
+   "Hormuz",
+   "MIDDLE EAST",
+   "Iran says 3 ships hit mines",
+   "Al Jazeera",
+   "CLAIM"
+  ],
+  [
+   "Hodeidah",
+   "MIDDLE EAST",
+   "Coalition orders port evacuated",
+   "Al Jazeera"
+  ],
+  [
+   "Tigray",
+   "AFRICA",
+   "Amnesty seeks shelling probe",
+   "Reuters · allAfrica"
+  ],
+  [
+   "Khartoum",
+   "AFRICA",
+   "Drones hit airport and UN site",
+   "Democracy Now"
+  ],
+  [
+   "Pretoria",
+   "AFRICA",
+   "Man convicted over Russia bid",
+   "Al Jazeera"
+  ],
+  [
+   "Islamabad",
+   "ASIA",
+   "Diesel cut Rs4, petrol Re1",
+   "Dawn",
+   "OFFICIAL"
+  ],
+  [
+   "Seoul",
+   "ASIA",
+   "KOSPI jumps 6.3% to 5,006",
+   "Korea Times"
+  ],
+  [
+   "New Delhi",
+   "ASIA",
+   "Hasina plans Dec 16 return",
+   "Al Jazeera",
+   "CLAIM"
+  ],
+  [
+   "Villavicencio",
+   "AMERICAS",
+   "Govt blames dissident for bomb",
+   "colombia.com",
+   "CLAIM"
+  ],
+  [
+   "Chicago",
+   "AMERICAS",
+   "Brief O'Hare ground stop",
+   "CNN"
+  ],
+  [
+   "Canberra",
+   "OCEANIA",
+   "Opposition turns on Vanuatu pact",
+   "ABC"
+  ]
+ ],
+ "left_out": [
+  [
+   "Nvidia reinstates Huang, shares +31%",
+   "Mon 23"
+  ],
+  [
+   "EU's 22nd Russia sanctions package",
+   "Mon 23"
+  ],
+  [
+   "Villavicencio car bomb, 23 hurt",
+   "Mon 23"
+  ],
+  [
+   "UNRWA worker killed in Gaza",
+   "Mon 23"
+  ],
+  [
+   "Brazil house passes fiscal bill",
+   "Mon 23"
+  ],
+  [
+   "Russia's 'open war' warning to Estonia",
+   "Mon 23"
+  ],
+  [
+   "Indonesia plot suspects named",
+   "Mon 23"
+  ],
+  [
+   "Russian corvette hit at Benghazi",
+   "Sun 22"
+  ],
+  [
+   "COP31 ends with no deal",
+   "Sun 22"
+  ]
+ ],
+ "not_yet": "Shenzhou-24 liftoff (Wed 25, 00:18 UTC) · EU leaders' summit (26-27 Nov) · Taiwan local elections (Sat 28) · Hasina's planned return (16 Dec).",
+ "foot": "HOW SURE: CONFIRMED = 2+ outlets · OFFICIAL = on the record · REPORTED = one outlet · CLAIM = one side's account. Sources: Al Jazeera, Euronews, AP, Reuters, CNN, Washington Post, Korea Herald, Korea Times, Dawn, Xinhua, WHO, ABC, RNZ, Democracy Now. Scenes are drawn illustrations, not photographs."
+}

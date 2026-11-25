@@ -171,21 +171,28 @@ def esc(s):
     return html.escape(str(s), quote=False)
 
 
-def pic(s, variant):
+def pic(s, variant, lead):
     if s["scene"] in SCENES:
         return SCENES[s["scene"]]()
-    return banner(s["scene"], s.get("text"), variant)
+    text = s.get("text")
+    if text and not lead and len(s["place"]) > 14:
+        text = None  # a long place chip would sit on top of the corner figure
+    return banner(s["scene"], text, variant)
 
 
 def card(n, s, variant, lead=False):
     col = REGION.get(s["region"], "#37474f")
     bcol = BADGE.get(s["badge"], "#2e7d32")
     cls = "card lead" if lead else "card"
-    return (f'<div class="{cls}" style="--rc:{col}"><div class="pic">{pic(s, variant)}'
+    # leads carry the badge on the picture; small cards put it on the source line,
+    # so a short picture is never covered by a badge and a place chip at once
+    badge = f'<span class="badge" style="background:{bcol}">{s["badge"]}</span>'
+    pic_badge, src_badge = (badge, "") if lead else ("", badge)
+    return (f'<div class="{cls}" style="--rc:{col}"><div class="pic">{pic(s, variant, lead)}'
             f'<div class="place"><i>{n}</i>{esc(s["place"])}</div>'
-            f'<div class="badge" style="background:{bcol}">{s["badge"]}</div></div>'
+            f'{pic_badge}</div>'
             f'<div class="tx"><div class="kick">{esc(s["region"])} · {esc(s["field"])}</div>'
-            f'<h2>{esc(s["headline"])}</h2><p>{esc(s["dek"])}</p><div class="src">{esc(s["source"])}</div></div></div>')
+            f'<h2>{esc(s["headline"])}</h2><p>{esc(s["dek"])}</p><div class="src">{src_badge}{esc(s["source"])}</div></div></div>')
 
 
 CSS = """
@@ -209,31 +216,32 @@ svg { display: block; width: 100%; height: 100%; }
 .utc b { color: #ff5a6e; margin-right: 7px; }
 .utc span { margin-right: 9px; }
 .utc em { color: #ffcc33; font-style: normal; font-weight: 700; margin-right: 3px; }
-.leads { display: grid; grid-template-columns: 1fr 1fr 1fr 170px; gap: 8px; margin: 5px 10px 0; height: 256px; }
-.rows { display: grid; grid-template-columns: repeat(5, 1fr); gap: 7px; margin: 5px 10px 0; height: 174px; }
+.leads { display: grid; grid-template-columns: 1fr 1fr 1fr 170px; gap: 8px; margin: 5px 10px 0; height: 252px; }
+.rows { display: grid; grid-template-columns: repeat(5, 1fr); gap: 7px; margin: 5px 10px 0; height: 172px; }
 .card { background: #fff; border: 1px solid #d8d2c4; border-top: 5px solid var(--rc); display: flex; flex-direction: column;
         min-height: 0; overflow: hidden; }
-.card .pic { position: relative; height: 52px; flex: none; }
-.card.lead .pic { height: 100px; }
+.card .pic { position: relative; flex: 0 1 52px; min-height: 26px; }
+.card.lead .pic { flex: 0 1 100px; min-height: 56px; }
 .place { position: absolute; left: 4px; top: 4px; background: rgba(255,255,255,.95); color: #15181d; padding: 1px 6px 1px 2px;
          border-radius: 3px; font: 700 12px Bahnschrift, Arial; letter-spacing: .3px; display: flex; align-items: center; gap: 4px;
          max-width: calc(100% - 8px); white-space: nowrap; overflow: hidden; }
 .place i { font-style: normal; background: var(--rc); color: #fff; border-radius: 50%; width: 17px; height: 17px; flex: none;
            display: inline-flex; align-items: center; justify-content: center; font-size: 11px; }
+.src .badge { position: static; display: inline-block; margin-right: 3px; padding: 0 3px; font-size: 8.5px; letter-spacing: .2px; vertical-align: 1px; }
 .badge { position: absolute; right: 4px; bottom: 4px; color: #fff; font: 700 10px Arial; letter-spacing: .7px;
          padding: 2px 5px; border-radius: 2px; }
-.tx { padding: 3px 7px 3px; display: flex; flex-direction: column; flex: 1; min-height: 0; }
-.kick { font: 700 10.5px Arial; letter-spacing: .6px; color: var(--rc); text-transform: uppercase; white-space: nowrap; overflow: hidden; }
-.card h2 { font: 700 17.5px/1.06 Georgia, serif; margin-top: 2px; }
-.card.lead h2 { font-size: 24px; line-height: 1.04; }
+.tx { padding: 3px 7px 2px; display: flex; flex-direction: column; flex: 1 0 auto; }
+.kick { flex: none; font: 700 10.5px Arial; letter-spacing: .6px; color: var(--rc); text-transform: uppercase; white-space: nowrap; overflow: hidden; }
+.card h2 { flex: none; font: 700 17px/1.06 Georgia, serif; margin-top: 2px; text-wrap: balance; }
+.card.lead h2 { font-size: 23px; line-height: 1.04; }
 .card p { font-size: 12px; line-height: 1.18; color: #2b2b2b; margin-top: 2px; }
-.card.lead p { font-size: 13px; line-height: 1.2; }
-.src { margin-top: auto; font-size: 9.5px; color: #6b6b6b; padding-top: 1px; white-space: nowrap; overflow: hidden; }
+.card.lead p { font-size: 12.5px; line-height: 1.2; }
+.src { margin-top: auto; font-size: 9.5px; line-height: 1.1; color: #6b6b6b; padding-top: 1px; flex: none; white-space: nowrap; overflow: hidden; }
 .nums { background: #15253d; color: #fff; padding: 6px 9px; display: flex; flex-direction: column; gap: 3px; }
 .nums h3 { font: 700 13px Bahnschrift, Arial; letter-spacing: 1px; border-bottom: 1px solid #3b4d6b; padding-bottom: 2px; }
 .nums div b { display: block; font: 700 26px/1 Bahnschrift, Arial; color: #ffcc33; }
 .nums div span { font-size: 11px; color: #d6e0ee; line-height: 1.12; display: block; }
-.bottom { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 8px; margin: 5px 10px 0; height: 120px; }
+.bottom { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 8px; margin: 5px 10px 0; height: 108px; }
 .also { min-width: 0; }
 .also h3, .map h3 { font: 700 13.5px Bahnschrift, Arial; letter-spacing: 1px; border-bottom: 2px solid #15181d; padding-bottom: 1px; margin-bottom: 2px; }
 .also ol { list-style: none; columns: 3; column-gap: 10px; }
@@ -244,12 +252,12 @@ svg { display: block; width: 100%; height: 100%; }
 .map { background: #fff; border: 1px solid #d8d2c4; padding: 3px 6px; display: flex; flex-direction: column; }
 .map .m { flex: 1; min-height: 0; position: relative; }
 .map .m svg { position: absolute; inset: 0; }
-.check { margin: 5px 10px 0; border: 2px solid #c62828; background: #fff; padding: 2px 8px; font-size: 11.5px; line-height: 1.25; height: 60px;
+.check { margin: 5px 10px 0; border: 2px solid #c62828; background: #fff; padding: 2px 8px; font-size: 11px; line-height: 1.2; height: 78px;
          overflow: hidden; }
 .check .h { display: flex; gap: 8px; align-items: center; font-weight: 700; font-size: 13px; white-space: nowrap; }
 .check .h span { background: #c62828; color: #fff; padding: 0 7px; font: 700 13px Bahnschrift, Arial; letter-spacing: 1px; }
 .check u { text-decoration: none; color: #c62828; font-weight: 700; }
-.foot { text-align: center; font-size: 10px; color: #555; padding: 2px 10px 0; height: 24px; overflow: hidden; line-height: 1.15; }
+.foot { text-align: center; font-size: 10px; color: #555; padding: 2px 10px 0; height: 26px; overflow: hidden; line-height: 1.15; }
 """
 
 

@@ -443,12 +443,95 @@ def concert(text=None):
     return _svg("".join(b), "#1a1030", text)
 
 
+def probe(text=None):
+    b = [_ground("#7a1f1f", 76), '<rect x="0" y="0" width="240" height="76" fill="#b71c1c"/>']
+    for x, y, r in ((30, 20, 7), (48, 12, 3), (56, 24, 3), (52, 36, 3), (40, 42, 3)):
+        b.append(f'<circle cx="{x}" cy="{y}" r="{r}" fill="#ffd23f"/>')
+    b.append('<g transform="rotate(-6 132 46)"><rect x="92" y="22" width="80" height="52" rx="2" fill="#f3ead7" stroke="#8a6d3b"/>'
+             '<rect x="100" y="30" width="22" height="26" fill="#9aa4b2"/><circle cx="111" cy="38" r="5" fill="#5b4636"/>'
+             '<rect x="104" y="44" width="14" height="12" rx="3" fill="#2b2b2b"/>'
+             '<path d="M128,32 h36 M128,40 h36 M128,48 h30 M100,62 h60" stroke="#8a8f98" stroke-width="2"/></g>')
+    b.append('<circle cx="158" cy="40" r="22" fill="#cfe6f5" fill-opacity=".35" stroke="#2b2b2b" stroke-width="6"/>'
+             '<path d="M174,56 L200,80" stroke="#2b2b2b" stroke-width="9" stroke-linecap="round"/>')
+    return _svg("".join(b), "#b71c1c", text)
+
+
+def leak(text=None):
+    b = [_ground("#6b6b55", 74), '<rect x="0" y="0" width="240" height="74" fill="#3d4a3a"/>']
+    for row in range(3):
+        for i in range(14):
+            x = 10 + i * 17 + (row % 2) * 8
+            y = 48 + row * 9
+            b.append(f'<path d="M{x},{y} v-8 M{x - 3},{y - 6} h6" stroke="#e8e4d8" stroke-width="2"/>')
+    b.append('<g transform="rotate(-8 120 30)"><rect x="70" y="14" width="74" height="40" fill="#f7f3ea" stroke="#999"/>'
+             '<path d="M78,24 h56 M78,31 h56 M78,38 h40" stroke="#9aa0a8" stroke-width="2"/>'
+             '<rect x="88" y="36" width="62" height="16" fill="none" stroke="#d62828" stroke-width="2.5"/>'
+             '<text x="119" y="49" font-family="Arial Black,Arial" font-weight="900" font-size="11" fill="#d62828" text-anchor="middle">LEAKED</text></g>')
+    return _svg("".join(b), "#3d4a3a", text)
+
+
+def _jet(x, y, s=1.0, c="#5d6b7d"):
+    return (f'<g transform="translate({x},{y}) scale({s})"><path d="M-24,0 L20,-3 L28,0 L20,3Z" fill="{c}"/>'
+            f'<path d="M-2,-2 L-14,-16 L-8,-16 L8,-2Z M-2,2 L-14,16 L-8,16 L8,2Z" fill="{c}"/>'
+            f'<path d="M-22,-1 L-28,-9 L-24,-9 L-16,-1Z" fill="{c}"/></g>')
+
+
+def jets(text=None):
+    b = ['<rect x="0" y="58" width="240" height="32" fill="#2c6e8f"/>',
+         '<path d="M150,60 q20,-16 44,-8 q14,4 18,8Z" fill="#3f7d4a"/>']
+    for r in (14, 26, 38):
+        b.append(f'<path d="M{186 - r},58 a{r},{r} 0 0 1 {2 * r},0" fill="none" stroke="#ffd23f" stroke-width="1.4" stroke-dasharray="3 3"/>')
+    b.append(_jet(70, 30, 1.0) + _jet(112, 44, 0.8))
+    b.append('<path d="M40,30 h-30 M86,44 h-30" stroke="#fff" stroke-width="1.5" opacity=".7"/>')
+    return _svg("".join(b), "#9fc5e8", text)
+
+
+def birdflu(text=None):
+    b = [_ground("#7fb069", 66), '<rect x="20" y="40" width="50" height="26" fill="#b23a48"/><path d="M16,40 L45,24 L74,40Z" fill="#8c2f39"/>']
+    b.append('<ellipse cx="128" cy="52" rx="30" ry="14" fill="#fff"/>'
+             '<path d="M110,46 q6,-6 12,0 q-2,8 -10,6z M134,56 q8,-6 14,2 q-4,6 -12,2z" fill="#222"/>'
+             '<rect x="104" y="62" width="5" height="12" fill="#fff"/><rect x="146" y="62" width="5" height="12" fill="#fff"/>'
+             '<path d="M156,44 q14,-2 16,10 l-12,4z" fill="#fff"/><circle cx="164" cy="48" r="1.6" fill="#222"/>'
+             '<ellipse cx="170" cy="56" rx="4" ry="3" fill="#f4a3b4"/>')
+    b.append('<circle cx="204" cy="34" r="13" fill="#d62828"/>')
+    import math
+    for k in range(10):
+        a = 2 * math.pi * k / 10
+        b.append(f'<circle cx="{204 + 17 * math.cos(a):.1f}" cy="{34 + 17 * math.sin(a):.1f}" r="2.6" fill="#d62828"/>')
+    return _svg("".join(b), "#cfe6f5", text)
+
+
+def helicopter(text=None):
+    b = [_ground("#8d7a63", 72), '<path d="M0,72 L240,72" stroke="#5b4a3a" stroke-width="2"/>']
+    b.append('<g transform="rotate(18 120 44)"><ellipse cx="116" cy="44" rx="24" ry="11" fill="#556b2f"/>'
+             '<path d="M136,42 L178,38 L178,44 L136,48Z" fill="#556b2f"/><path d="M176,32 v16" stroke="#333" stroke-width="3"/>'
+             '<path d="M74,30 H158" stroke="#333" stroke-width="3"/><path d="M116,30 v4" stroke="#333" stroke-width="3"/>'
+             '<rect x="100" y="38" width="12" height="7" fill="#cfe6f5"/></g>')
+    b.append(flame(150, 72, 0.7))
+    b.append(smoke(150, 50, 0.6, "#3f3f46"))
+    return _svg("".join(b), "#d9e2ec", text)
+
+
+def mine(text=None):
+    b = [_ground("#8b5a2b", 66), '<path d="M0,66 L40,40 L80,66Z M150,66 L200,32 L240,66Z" fill="#a0522d"/>']
+    b.append('<path d="M100,66 L112,20 L124,66 M104,50 H120 M108,34 H116" stroke="#3a3a3a" stroke-width="3" fill="none"/>'
+             '<circle cx="112" cy="20" r="6" fill="none" stroke="#3a3a3a" stroke-width="3"/>')
+    b.append('<path d="M140,62 h40 l-5,-14 h-30z" fill="#555"/><circle cx="150" cy="66" r="4" fill="#222"/><circle cx="172" cy="66" r="4" fill="#222"/>')
+    for x, y in ((148, 46), (156, 44), (164, 46), (170, 44)):
+        b.append(f'<circle cx="{x}" cy="{y}" r="4" fill="#4fb3bf"/>')
+    for x in (40, 66):
+        b.append(f'<circle cx="{x}" cy="54" r="5" fill="#5b4636"/><rect x="{x - 6}" y="59" width="12" height="16" rx="3" fill="#f4a261"/>'
+                 f'<path d="M{x - 6},50 a6,6 0 0 1 12,0z" fill="#ffd23f"/>')
+    return _svg("".join(b), "#e9c46a", text)
+
+
 KINDS = {f.__name__: f for f in (fire, ship, strike, drone, ballot, protest, court, storm, quake, sport,
                                  market, health, plane, diplomacy, government, tech, flood, climate,
                                  aid, police, space, rally, eu, nato, podium, cricket, union, sanctions,
                                  warning, carstrike, trophy, carbomb, wildfire, heatwave, migrants,
-                                 satellite, oil, train, election, concert)}
-TEXTY = {"climate", "sanctions", "carstrike", "aid", "ballot", "election", "market", "rally"}
+                                 satellite, oil, train, election, concert,
+                                 probe, leak, jets, birdflu, helicopter, mine)}
+TEXTY = {"leak", "climate", "sanctions", "carstrike", "aid", "ballot", "election", "market", "rally"}
 
 
 def banner(kind, text=None, variant=0):
