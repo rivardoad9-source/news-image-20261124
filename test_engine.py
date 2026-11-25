@@ -1,7 +1,6 @@
 """Tests for the story-file engine in design/engine.py (layout checks that
 need a browser are skipped when Edge is not installed)."""
 
-import json
 import os
 import pathlib
 import struct
@@ -15,15 +14,15 @@ sys.path.insert(0, str(ROOT / "design"))
 
 import engine  # noqa: E402
 import icons  # noqa: E402
+from sample_day import sample_day  # noqa: E402
 
-SAMPLE = ROOT / "design" / "sample-day.json"
 NEW_KINDS = ["wildfire", "heatwave", "migrants", "satellite", "oil", "train", "election", "concert"]
 NEEDED_TOPICS = ["sport", "market", "quake", "flood", "storm", "diplomacy", "court", "health", "tech",
                  "space", "protest", "wildfire", "heatwave"]
 
 
 def sample():
-    return json.loads(SAMPLE.read_text(encoding="utf-8"))
+    return sample_day()
 
 
 class ValidateTest(unittest.TestCase):
@@ -109,8 +108,8 @@ class RenderTest(unittest.TestCase):
         cls.tmp = tempfile.TemporaryDirectory()
         cls.a = pathlib.Path(cls.tmp.name) / "a.png"
         cls.b = pathlib.Path(cls.tmp.name) / "b.png"
-        cls.report = engine.render(SAMPLE, cls.a)
-        engine.render(SAMPLE, cls.b)
+        cls.report = engine.render(sample_day(), cls.a)
+        engine.render(sample_day(), cls.b)
 
     @classmethod
     def tearDownClass(cls):

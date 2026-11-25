@@ -1,17 +1,21 @@
-"""Write the 24 November 2026 world-news image to /output/entry.png."""
+"""Entry for make.fun's news-image-20261124: the world's news of 24 November 2026 in one image.
+
+The picture is already drawn (design/engine.py renders design/day.json to entry.png), so at
+run time this only copies those exact bytes to the output folder: no network, same file every run.
+"""
 
 import os
-import pathlib
-import shutil
+from pathlib import Path
 
-SOURCE = pathlib.Path(__file__).resolve().parent / "entry.png"  # drawn by design/engine.py from design/day.json
+IMAGE = Path(__file__).resolve().with_name("entry.png")
 
 
-def main():
-    out = pathlib.Path(os.environ.get("MAKEFUN_OUTPUT_DIR", "/output"))
-    out.mkdir(parents=True, exist_ok=True)
-    shutil.copyfile(SOURCE, out / "entry.png")
+def write_entry(folder):
+    target = Path(folder)
+    target.mkdir(parents=True, exist_ok=True)
+    (target / "entry.png").write_bytes(IMAGE.read_bytes())
+    return target / "entry.png"
 
 
 if __name__ == "__main__":
-    main()
+    write_entry(os.environ.get("MAKEFUN_OUTPUT_DIR", "/output"))

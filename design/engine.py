@@ -4,7 +4,7 @@ Everything on the page comes from the file: masthead date, tagline, region
 chips and counts (computed), UTC timeline, 3 leads, 10 illustrated stories,
 briefs, map pins (from lat/lon), DATE CHECK box. Nothing else is date-specific.
 
-usage:  python design/engine.py design/sample-day.json out.png
+usage:  python design/engine.py design/day.json out.png
         (prints the overflow report; exits 1 if anything overflows or is invalid)
 """
 
@@ -22,7 +22,6 @@ HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from icons import KINDS, banner  # noqa: E402
-from scenes import SCENES  # noqa: E402
 
 EDGE = os.environ.get("EDGE_PATH", r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
 
@@ -81,7 +80,7 @@ def short_day(day):
 
 
 def scene_ok(name):
-    return name in SCENES or name in KINDS
+    return name in KINDS
 
 
 def validate(day):
@@ -172,8 +171,6 @@ def esc(s):
 
 
 def pic(s, variant, lead):
-    if s["scene"] in SCENES:
-        return SCENES[s["scene"]]()
     text = s.get("text")
     if text and not lead and len(s["place"]) > 14:
         text = None  # a long place chip would sit on top of the corner figure

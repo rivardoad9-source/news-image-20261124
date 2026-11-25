@@ -2,9 +2,30 @@
 event, all hand-drawn SVG. banner(kind, text=None) returns an <svg> string;
 `text` puts a big scoreboard-style figure in the corner (a score, a toll)."""
 
-from scenes import flame, smoke
-
 W, H = 240, 90
+
+
+def flame(x, y, s=1.0):
+    """A flame standing on (x, y): three nested tongues, darkest outside, s scales it."""
+    out = []
+    for height, half, colour in ((32, 12, "#c1121f"), (23, 8, "#f48c06"), (13, 4.5, "#ffe066")):
+        h, w = height * s, half * s
+        out.append(f'<path d="M{x - w:.1f},{y:.1f} Q{x - w * 1.3:.1f},{y - h * .55:.1f} {x:.1f},{y - h:.1f} '
+                   f'Q{x + w * 1.3:.1f},{y - h * .55:.1f} {x + w:.1f},{y:.1f} Z" fill="{colour}"/>')
+    return "".join(out)
+
+
+def smoke(x, y, s=1.0, c="#555"):
+    """A plume drifting up and to the right from (x, y), fading as it rises."""
+    out = []
+    for i in range(5):
+        cx, cy = x + i * 7 * s, y - i * 9 * s
+        rx, ry = (8 + i * 3) * s, (6 + i * 2) * s
+        out.append(f'<ellipse cx="{cx:.1f}" cy="{cy:.1f}" rx="{rx:.1f}" ry="{ry:.1f}" fill="{c}" '
+                   f'opacity="{0.8 - i * 0.13:.2f}"/>')
+    return "".join(out)
+
+
 _TEXTY = [False]  # kind being drawn carries lettering, so never mirror it
 _V = [0]  # variant of the banner being drawn (set by banner())
 
